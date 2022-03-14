@@ -3,6 +3,5 @@
 package-lock.json
 yarn.lock
 
-/src/config
-
 .env
+.migrate

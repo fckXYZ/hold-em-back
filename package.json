@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "escape-html": "^1.0.3",
     "express": "^4.17.3",
     "express-rate-limit": "^6.3.0",
+    "migrate": "^1.7.0",
     "mongoose": "^6.2.4",
     "mongoose-unique-validator": "^3.0.0",
     "validator": "^13.7.0"
