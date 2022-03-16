@@ -1,11 +1,16 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const config = require('./config/index');
 
 const mainRouter = require('./routes/index');
+const { errorsHandler } = require('./middlewares/errorsHandler');
 
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const run = async () => {
   try {
@@ -17,6 +22,7 @@ const run = async () => {
       console.log(`Up! Listening to ${config.PORT}`);
     });
     app.use('/api', mainRouter);
+    app.use(errorsHandler); // custom errors handler
   } catch (error) {
     console.error(error);
   }

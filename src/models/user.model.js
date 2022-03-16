@@ -25,7 +25,6 @@ const userSchema = new mongoose.Schema({
     required: true,
     select: false,
     minLength: 6,
-    maxLength: 30,
   },
   main_currency: {
     type: mongoose.Schema.Types.ObjectId,
@@ -36,7 +35,7 @@ const userSchema = new mongoose.Schema({
     ref: 'language',
   },
   balance: {
-    required: true,
+    // required: true,
     type: mongoose.Schema.Types.ObjectId,
     ref: 'balance',
   },

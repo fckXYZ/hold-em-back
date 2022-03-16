@@ -15,6 +15,7 @@ module.exports = {
         .populate('balance', '-_id');
     } catch (e) {
       console.log(e);
+      return e;
     }
   },
   createUser: async (userCreds) => {
